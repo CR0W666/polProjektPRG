@@ -51,9 +51,9 @@ class Rozvrh {
     // return rozvrh;
     // }
 
-    public static void setup(String name, int nultaH, int pocetHVDnu, Scanner sc, String dny[], String rozvrh[][]) {
+    //public static void setup(String name, int nultaH, int pocetHVDnu, Scanner sc, String dny[], String rozvrh[][]) {
 
-    }
+    //}
 
     public static void fillRozvrh(int pocetHVDnu, String rozvrh[][], int day, Scanner sc) {
         for (int hour = 1; hour <= pocetHVDnu; hour++) {
