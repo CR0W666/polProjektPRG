@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Rozvrh {
     public static void main(String[] args) {
-        String rozvrh[][] = { { " ", "HW", "HW", "NET", "NET", "PCV", "PCV", " ", " ANJ", "ANJ", " " },
+        String rozvrh[][] = { { " ", "HW", "HW", "NET", "NET", "PCV", "PCV", " ", "ANJ", "ANJ", " "},
                 { " ", "MAT", "ANJ", "PRG", "PRG", "CJL", "MAT", " ", " ", " ", " " },
                 { " ", "TEV", "TEV", "CJL", "FYZ", "ZMU", "MDO", "ANJ", " ", " ", " " },
                 { " ", "ZMU", "ZMU", "OPS", "OPS", "WEB", "WEB", " ", " ", " ", " " },
@@ -18,9 +18,9 @@ class Rozvrh {
         sc.reset();
         if (name.equals("test")) {
 
-            test(name);
-            System.out.println("test mode");
-
+            name = test();
+            
+            
         } else {
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 10; j++) {
@@ -34,26 +34,11 @@ class Rozvrh {
 
     }
 
-    public static void test(String name) {
-        // rozvrh = testRozvrh();
-
-        name = "Lukas";
+    public static String test() {
+        System.out.println("test mode");
+        return "Lukas";
     }
 
-    // public static String[][] testRozvrh() {
-    // String rozvrh[][] = {
-    // {" ", "HW", "HW", "NET", "NET", "PCV", "PCV", " ", " ANJ", "ANJ", " "},
-    // {" ", "MAT", "ANJ", "PRG", "PRG", "CJL", "MAT", " ", " ", " ", " "},
-    // {" ", "TEV", "TEV", "CJL", "FYZ", "ZMU", "MDO", "ANJ", " ", " ", " "},
-    // {" ", "ZMU", "ZMU", "OPS", "OPS", "WEB", "WEB", " ", " ", " ", " "},
-    // {" ", "POP", "POP", "OVS", "FYZ", "MAT", "MAT", " ", " ", " ", " "},
-    // };
-    // return rozvrh;
-    // }
-
-    //public static void setup(String name, int nultaH, int pocetHVDnu, Scanner sc, String dny[], String rozvrh[][]) {
-
-    //}
 
     public static void fillRozvrh(int pocetHVDnu, String rozvrh[][], int day, Scanner sc) {
         for (int hour = 1; hour <= pocetHVDnu; hour++) {
@@ -65,7 +50,7 @@ class Rozvrh {
 
     public static void fillInRest(int pocetHVDnu, String rozvrh[][], int day) {
         if (pocetHVDnu < 10) {
-            for (int i = pocetHVDnu + 1; i < 10; i++) {
+            for (int i = pocetHVDnu + 1; i <= 10; i++) {
                 rozvrh[day][i] = " ";
             }
         }
@@ -103,8 +88,8 @@ class Rozvrh {
     }
 
     public static void searchForPrg(String rozvrh[][], String dny[], String name) {
-        int hodinyPrg[] = new int[10];
-        int den[] = new int[10];
+        int hodinyPrg[] = new int[60];
+        int den[] = new int[60];
         String hodina;
         int incr = 0;
         for (int i = 0; i < 5; i++) {
